@@ -74,6 +74,7 @@ function setPropina() {
     propina_person = roundToTwo(propina_person)
         // console.log(propina);
         // console.log(propina_person);
+        // console.log('holamundo');
     if (propina_person > 0 && propina_person < 100000) {
         tip_amount.textContent = `Q${propina_person}`
 
