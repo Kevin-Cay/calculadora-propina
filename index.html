@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="Calculadora-de-propina" content="Aplicación para calcular la propina" />
+    <title>Calculadora de propina</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="logo">
+        <img src="images/logo.svg" alt="">
+    </div>
+    <section class="card">
+        <div class="options">
+            <div class="bill">
+                <div class="texto">
+                    <h1>Cuenta</h1>
+                    <h1 class="error-text" id="error-cuenta">Ingrese un valor</h1>
+                </div>
+                <div class="bill-amount">
+                    <input id="cuenta" type="text" placeholder="0" maxlength="7">
+                </div>
+            </div>
+
+            <div class="select-tip">
+                <div class="texto">
+                    <h1>Propina %</h1>
+                    <h1 class="error-text" id="error-propina">Ingrese un valor</h1>
+                </div>
+                <div class="tip">
+                    <button class="tip-option" value="5" onclick={addPropina(value)}>5%</button>
+                    <button class="tip-option" value="10" onclick={addPropina(value)}>10%</button>
+                    <button class="tip-option" value="15" onclick={addPropina(value)}>15%</button>
+                    <button class="tip-option" value="25" onclick={addPropina(value)}>25%</button>
+                    <button class="tip-option" value="50" onclick={addPropina(value)}>50%</button>
+                    <div class="tip-option"> <input id="propina" type="text" placeholder="Otro" maxlength="2"> </div>
+                </div>
+            </div>
+
+            <div class="number-people">
+                <div class="texto">
+                    <h1>Número de personas</h1>
+                    <h1 class="error-text" id="error-people">Ingrese valor</h1>
+                </div>
+                <div class="people-amount">
+                    <input id="people" type="text" placeholder="0" maxlength="7">
+                </div>
+            </div>
+        </div>
+
+        <div class="results">
+            <div class="text-result">
+                <div class="tip-amount div-result">
+                    <div>
+                        <h1>Propina</h1>
+                        <p>/ persona</p>
+                    </div>
+                    <div>
+                        <p class="number" id="tip-amount">Q0.00</p>
+                    </div>
+                </div>
+                <div class="total div-result">
+                    <div>
+                        <h1>Total</h1>
+                        <p>/ persona</p>
+                    </div>
+                    <div>
+                        <p class="number" id="total">Q0.00</p>
+                    </div>
+                </div>
+            </div>
+            <button class="result-button" id="reinicio" onclick={Actualizar()}>Reiniciar</button>
+        </div>
+        </div>
+
+    </section>
+
+    <!-- <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Kevin Cay</a>.
+    </div> -->
+    <script src="code.js"></script>
+</body>
+
+</html>

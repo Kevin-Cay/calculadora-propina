@@ -1,0 +1,382 @@
+/*Global*/
+
+:root {
+    --color-one: hsl(183, 100%, 15%);
+    --color-two: hsl(186, 14%, 43%);
+    --color-three: hsla(185, 76%, 76%, 0.795);
+    --color-four: hsla(185, 47%, 85%, 0.795);
+    --color-five: hsl(189, 41%, 97%);
+    --color-six: hsl(172, 67%, 45%);
+    --color-seven: rgb(219, 0, 0);
+    --text-weight-one: 700;
+    --text-weight-two: 400;
+}
+
+* {
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+    color: var(--color-two);
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--color-four);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 14px;
+}
+
+.logo {
+    margin-top: 100px;
+}
+
+.logo>img {
+    width: 70%;
+}
+
+.error-text {
+    color: var(--color-seven);
+    font-weight: var(--text-weight-two);
+}
+
+
+/*Card*/
+
+.card {
+    margin-top: 50px;
+    height: 350px;
+    min-height: 350px;
+    width: 650px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.025);
+}
+
+
+/*Lado izquierdo Carta*/
+
+.options {
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/*Ingreso de cuenta*/
+
+.bill {
+    display: block;
+}
+
+.texto {
+    display: flex;
+    justify-content: space-between;
+}
+
+#error-cuenta {
+    visibility: hidden;
+}
+
+.bill-amount {
+    height: 30px;
+    width: 100%;
+    background-color: var(--color-four);
+    border-radius: 3px;
+    background-image: url('images/q.svg');
+    background-repeat: no-repeat;
+    background-position: 5px;
+    background-size: 15px;
+}
+
+.bill-amount>input {
+    width: 100%;
+    height: 100%;
+    background: none;
+    color: var(--color-one);
+    text-align: right;
+    font-size: 20px;
+    font-weight: var(--text-weight-one);
+    padding-right: 5px;
+    border: none;
+}
+
+.bill-amount>input::placeholder {
+    color: var(--color-two);
+}
+
+.bill-amount>input:hover {
+    cursor: pointer;
+}
+
+.bill-amount>input:focus {
+    border: 2px solid var(--color-six);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+    outline: 0 none;
+}
+
+
+/*Ingreso de propina */
+
+.select-tip {
+    display: block;
+}
+
+#error-propina {
+    visibility: hidden;
+}
+
+.tip {
+    height: 80px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.tip-option {
+    width: 100%;
+    height: 100%;
+    background: var(--color-one);
+    color: #fff;
+    border-radius: 3px;
+    font-weight: var(--text-weight-one);
+}
+
+.tip-option:hover {
+    background: var(--color-three);
+    color: var(--color-one);
+    cursor: pointer;
+}
+
+.tip>div {
+    background: var(--color-four);
+    color: #fff;
+    border-radius: 3px;
+}
+
+.tip>div:hover {
+    background: var(--color-four);
+}
+
+.tip-option>input {
+    width: 100%;
+    height: 100%;
+    background: none;
+    color: var(--color-one);
+    text-align: right;
+    font-size: 15px;
+    font-weight: var(--text-weight-one);
+    padding: 0 5px;
+}
+
+.tip-option>input:focus {
+    border: 2px solid var(--color-six);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+    outline: 0 none;
+}
+
+.tip-option>input::placeholder {
+    font-weight: var(--text-weight-one);
+    color: var(--color-two);
+    text-align: center;
+}
+
+
+/*Numero de personas */
+
+.number-people {
+    display: block;
+    padding-bottom: 10px;
+}
+
+#error-people {
+    visibility: hidden;
+}
+
+.people-amount {
+    height: 30px;
+    width: 100%;
+    background-color: var(--color-four);
+    border-radius: 3px;
+    background-image: url('images/bx-user.svg');
+    background-repeat: no-repeat;
+    background-position: 5px;
+    background-size: 18px;
+}
+
+.people-amount>input {
+    width: 100%;
+    height: 100%;
+    background: none;
+    color: var(--color-one);
+    text-align: right;
+    font-size: 20px;
+    font-weight: var(--text-weight-one);
+    padding-right: 5px;
+    border: none;
+}
+
+.people-amount>input::placeholder {
+    color: var(--color-two);
+}
+
+.people-amount>input:hover {
+    cursor: pointer;
+}
+
+.people-amount>input:focus {
+    border: 2px solid var(--color-six);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+    outline: 0 none;
+}
+
+
+/*Parte derecha o resultados*/
+
+.results {
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    background-color: var(--color-one);
+    border-radius: 10px;
+    color: var(--color-five);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.results h1 {
+    color: #fff;
+}
+
+p {
+    color: var(--color-four);
+    font-size: 12px;
+    font-weight: var(--text-weight-two);
+}
+
+.text-result {
+    height: 140px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.div-result {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.result-button {
+    height: 35px;
+    width: 100%;
+    background: var(--color-four);
+    color: var(--color-one);
+    font-weight: var(--text-weight-one);
+    border-radius: 5px;
+}
+
+.result-button:hover {
+    cursor: pointer;
+    background: var(--color-three);
+    color: #fff;
+}
+
+.number {
+    font-size: 30px;
+    color: var(--color-six);
+    font-weight: var(--text-weight-one);
+}
+
+
+/*Adaptarlo a dispositivos móbiles*/
+
+@media screen and (max-width: 420px) {
+    body {
+        height: auto;
+        width: auto;
+    }
+    h1 {
+        font-size: 15px;
+    }
+    .logo {
+        margin-top: 30px;
+        text-align: center;
+    }
+    .logo>img {
+        width: 70%;
+    }
+    /*Tarjeta de contenido*/
+    .card {
+        height: auto;
+        width: 100vw;
+        min-height: 0px;
+        align-items: flex-start;
+        margin-top: 40px;
+        padding: 20px;
+        border-radius: 20px;
+        grid-template-columns: 1fr;
+        gap: 2em;
+    }
+    .options {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+    /*Configuración de Cuenta */
+    .bill-amount {
+        height: 45px;
+        background-position: 15px;
+        border-radius: 7px;
+    }
+    .bill-amount>input {
+        padding: 15px;
+    }
+    /*Configuración GRID tip*/
+    .tip {
+        height: 170px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 15px;
+    }
+    .tip-option {
+        border-radius: 7px;
+        font-size: 18px;
+    }
+    /*Configuración Input People*/
+    .people-amount {
+        height: 45px;
+        background-position: 15px;
+        border-radius: 7px;
+    }
+    .people-amount>input {
+        padding: 15px;
+    }
+    /*Resultados*/
+    .results {
+        width: 100%;
+        height: 100%;
+    }
+    .result-button {
+        margin-top: 15px;
+    }
+}
